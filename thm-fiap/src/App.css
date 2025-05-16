@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +42,50 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Estilos gerais */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Estilos do cabeçalho */
+header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos dos cards */
+.card {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Estilos do mapa */
+.map-container {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Estilos para ícones */
+.bi {
+  font-size: 1.2rem;
 }
