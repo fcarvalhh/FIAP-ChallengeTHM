@@ -19,3 +19,8 @@ export interface PontoAlagamento {
     nivelRisco: 'baixo' | 'medio' | 'alto';
     ultimaAtualizacao: string;
 } 
+
+export interface DadosApi {
+    dtInicio: string;
+    dtFim: string;
+}
