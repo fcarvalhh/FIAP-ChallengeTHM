@@ -5,19 +5,19 @@ const integrantes = [
     nome: 'Fred Carvalho',
     funcao: 'Desenvolvedor Front-End',
     descricao: 'Responsável pela construção da interface do usuário e integração com os dados do mapa.',
-    imagem: '/images/fred.jpg',
+    imagem: '../src/img/Fred.jpg',
   },
   {
     nome: 'João Pedro',
     funcao: 'Desenvolvedor Back-End',
     descricao: 'Atuou na estruturação dos dados, lógica de alagamento e gráficos históricos.',
-    imagem: '/images/joao.jpg',
+    imagem: '../src/img/joao.jpg',
   },
   {
     nome: 'Felipe',
     funcao: 'Designer e Testes',
     descricao: 'Cuidou do layout, experiência do usuário e testes finais de usabilidade.',
-    imagem: '/images/felipe.jpg',
+    imagem: '../src/img/Felipe.jpg',
   },
 ];
 

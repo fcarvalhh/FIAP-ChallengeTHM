@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import MapaAlagamento from './components/MapaAlagamento';
-import GraficoChuvas from './components/GraficoChuvas';
-import PainelNoticias from './components/PainelNoticias';
-import SobreNos from './components/SobreNos';
-import './App.css';
+import MapaAlagamento from '../components/features/MapaAlagamento';
+import GraficoChuvas from '../components/features/GraficoChuvas';
+import PainelNoticias from '../components/features/PainelNoticias';
+import SobreNos from './SobreNos';
+import "../components/style/App.css";
+import Header from '../components/header/header';
+
 
 const App: React.FC = () => {
     const [pagina, setPagina] = useState<'principal' | 'sobre'>('principal');
@@ -42,46 +44,48 @@ const App: React.FC = () => {
                             </div>
                         </div>
 
-                <div className="row mb-4">
-                    <div className="col-12">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Dicas de Segurança</h5>
-                                <ul className="list-group">
-                                    <li className="list-group-item">
-                                        <i className="bi bi-exclamation-triangle text-warning me-2"></i>
-                                        Evite áreas alagadas - a água pode estar contaminada
-                                    </li>
-                                    <li className="list-group-item">
-                                        <i className="bi bi-house-door text-primary me-2"></i>
-                                        Se possível, permaneça em local seguro durante chuvas intensas
-                                    </li>
-                                    <li className="list-group-item">
-                                        <i className="bi bi-telephone text-success me-2"></i>
-                                        Mantenha contatos de emergência sempre à mão
-                                    </li>
-                                </ul>
+                        <div className="row mb-4">
+                            <div className="col-12">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Dicas de Segurança</h5>
+                                        <ul className="list-group">
+                                            <li className="list-group-item">
+                                                <i className="bi bi-exclamation-triangle text-warning me-2"></i>
+                                                Evite áreas alagadas - a água pode estar contaminada
+                                            </li>
+                                            <li className="list-group-item">
+                                                <i className="bi bi-house-door text-primary me-2"></i>
+                                                Se possível, permaneça em local seguro durante chuvas intensas
+                                            </li>
+                                            <li className="list-group-item">
+                                                <i className="bi bi-telephone text-success me-2"></i>
+                                                Mantenha contatos de emergência sempre à mão
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <div className="row mb-4">
-                    <div className="col-12">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Notícias</h5>
-                                <PainelNoticias />
+                        <div className="row mb-4">
+                            <div className="col-12">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Notícias</h5>
+                                        <PainelNoticias />
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                      
+
                     </>
                 ) : (
                     <SobreNos />
                 )}
             </main>
+
+
 
             <footer className="bg-light py-4 mt-4">
                 <div className="container text-center">

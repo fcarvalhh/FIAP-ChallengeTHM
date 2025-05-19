@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { PontoAlagamento } from '../types';
+import { PontoAlagamento } from '../../types';
 import { Icon } from 'leaflet';
 
 /** 
