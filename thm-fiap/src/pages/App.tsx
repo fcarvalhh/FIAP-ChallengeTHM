@@ -50,15 +50,15 @@ const App: React.FC = () => {
                                     <div className="card-body">
                                         <h5 className="card-title">Dicas de Segurança</h5>
                                         <ul className="list-group">
-                                            <li className="list-group-item">
+                                            <li className="list-group-item list-group-item-action">
                                                 <i className="bi bi-exclamation-triangle text-warning me-2"></i>
                                                 Evite áreas alagadas - a água pode estar contaminada
                                             </li>
-                                            <li className="list-group-item">
+                                            <li className="list-group-item list-group-item-action">
                                                 <i className="bi bi-house-door text-primary me-2"></i>
                                                 Se possível, permaneça em local seguro durante chuvas intensas
                                             </li>
-                                            <li className="list-group-item">
+                                            <li className="list-group-item list-group-item-action">
                                                 <i className="bi bi-telephone text-success me-2"></i>
                                                 Mantenha contatos de emergência sempre à mão
                                             </li>
