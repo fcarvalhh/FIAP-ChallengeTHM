@@ -45,8 +45,25 @@
 }
 
 /* Estilos gerais */
+:root {
+  --primary-color: #0A2647;
+  --secondary-color: #144272;
+  --accent-color: #3498db;
+  --success-color: #2ecc71;
+  --warning-color: #f1c40f;
+  --danger-color: #e74c3c;
+  --text-color: #2c3e50;
+  --text-light: #95a5a6;
+  --background-light: #f8f9fa;
+  --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s ease;
+}
+
 body {
-  background-color: #f8f9fa;
+  background-color: #f0f2f5;
+  color: var(--text-color);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
 }
 
 /* Estilos do cabeçalho */
@@ -54,38 +71,210 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+header.main-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 2.5rem 0 1.5rem 0;
+  margin-bottom: 2rem !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+header.main-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h20v20H0z" fill="none"/><path d="M10 0l10 10-10 10L0 10z" fill="rgba(255,255,255,0.03)"/></svg>') repeat;
+  opacity: 0.1;
+}
+
+header.main-header h1 {
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header.main-header p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  color: white;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
 /* Estilos dos cards */
 .card {
   border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease-in-out;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  background: white;
+  margin-bottom: 2rem;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilos do mapa */
-.map-container {
-  border-radius: 8px;
+.card-title {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card-title i {
+  color: var(--accent-color);
+  font-size: 1.75rem;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.list-group-item {
+  border: none;
+  padding: 1.25rem;
+  margin-bottom: 0.75rem;
+  border-radius: 12px !important;
+  background-color: #f8f9fa;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+}
+
+.list-group-item:hover {
+  background-color: #ffffff;
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.list-group-item i {
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 3rem 0 !important;
+  margin-top: 4rem !important;
+  position: relative;
   overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-color), var(--success-color));
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+/* Estilos para o container principal */
+.container {
+  max-width: 1200px;
+  padding: 0 2rem;
 }
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
+  header.main-header {
+    padding: 2rem 0;
   }
 
-  h1 {
-    font-size: 1.5rem;
+  header.main-header h1 {
+    font-size: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
   }
 }
 
 /* Estilos para ícones */
 .bi {
   font-size: 1.2rem;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(90deg, var(--accent-color), var(--success-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1) !important;
 }

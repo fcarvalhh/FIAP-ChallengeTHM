@@ -1,24 +1,30 @@
 import React from 'react';
+import fredImg from '../img/fred.jpeg';
+import joaoImg from '../img/joao.jpg';
+import felipeImg from '../img/felipe.jpeg';
 
 const integrantes = [
   {
     nome: 'Fred Carvalho',
     funcao: 'Desenvolvedor Front-End',
     descricao: 'Responsável pela construção da interface do usuário e integração com os dados do mapa.',
-    imagem: '../src/img/Fred.jpg',
+    imagem: fredImg,
+    imagePosition: 'center 70%'
   },
   {
     nome: 'João Pedro',
     funcao: 'Desenvolvedor Back-End',
     descricao: 'Atuou na estruturação dos dados, lógica de alagamento e gráficos históricos.',
-    imagem: '../src/img/joao.jpg',
+    imagem: joaoImg,
+    imagePosition: 'center center'
   },
   {
     nome: 'Felipe',
     funcao: 'Designer e Testes',
     descricao: 'Cuidou do layout, experiência do usuário e testes finais de usabilidade.',
-    imagem: '../src/img/Felipe.jpg',
-  },
+    imagem: felipeImg,
+    imagePosition: 'center center'
+  }
 ];
 
 const SobreNos: React.FC = () => {
@@ -51,7 +57,11 @@ const SobreNos: React.FC = () => {
                 src={membro.imagem}
                 alt={membro.nome}
                 className="card-img-top"
-                style={{ objectFit: 'cover', height: '250px' }}
+                style={{
+                  objectFit: 'cover',
+                  height: '250px',
+                  objectPosition: membro.imagePosition
+                }}
               />
               <div className="card-body">
                 <h5 className="card-title">{membro.nome}</h5>
