@@ -23,4 +23,6 @@ export interface PontoAlagamento {
 export interface DadosApi {
     dtInicio: string;
     dtFim: string;
+    latitude: number;
+    longitude: number;
 }

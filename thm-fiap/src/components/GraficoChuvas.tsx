@@ -28,43 +28,30 @@ const GraficoChuvas: React.FC = () => {
   const [dadosApi, setDadosApi] = useState<DadosApi>();
   const apiKey = import.meta.env.VITE_API_KEY;
 
-  useEffect(() => {
+useEffect(() => {
+  const buscarDados = async () => {
+    function converterData(data: string): string {
+      const partes = data.split("/");
+      const dia = parseInt(partes[0]);
+      const mes = parseInt(partes[1]) - 1;
+      const ano = parseInt(partes[2]);
 
-//Para pegar as datas (de hoje e de sete dias antes)
-const hora = Date.now();
-const hoje = new Date(hora);
-const seteDiasAntes = new Date(hoje.getTime() - (7 * 24 * 60 * 60 * 1000));
+      let mesFormatado = (mes + 1).toString().padStart(2, "0"); 
+      let diaFormatado = dia.toString().padStart(2, "0");
 
-const dataInicio: string = converterData(hoje.toLocaleDateString());
-const dataFim: string = converterData(seteDiasAntes.toLocaleDateString());
+      return `${ano}-${mesFormatado}-${diaFormatado}`;
+    }
 
-console.log(dataInicio + " - " + dataFim);
+    const hora = Date.now();
+    const hoje = new Date(hora);
+    const seteDiasAntes = new Date(hoje.getTime() - 7 * 24 * 60 * 60 * 1000);
 
-const getDias: DadosApi = {
-    dtInicio: dataInicio,
-    dtFim: dataFim,
-};
+    const dataInicio = converterData(seteDiasAntes.toLocaleDateString());
+    const dataFim = converterData(hoje.toLocaleDateString());
 
-setDadosApi(getDias);
-
-//Função para converter de dd/MM/yyyy para yyyy-MM-dd
-function converterData(data : string) : string {
-    const partes = data.split("/");
-     const dia = parseInt(partes[0]);
-     const mes = parseInt(partes[1]) - 1; 
-     const ano = parseInt(partes[2]);
-
-    let mesFormatado = mes.toString().length === 1 ? "0" + mes.toString() : mes.toString();
-    let diaFormatado = dia.toString().length === 1 ? "0" + dia.toString() : dia.toString();
-
-    return `${ano}-${mesFormatado}-${diaFormatado}`;
-}
-    // TODO: Implementar chamada à API para buscar dados pluviométricos
-    const buscarDados = async () => {
-        //Estou usando o Meteostat API mas caso queiram trocar OBS: Pode fazer 500 request por mês
-        try {
-            const response = await fetch(
-        `https://meteostat.p.rapidapi.com/point/daily?lat=52.5244&lon=13.4105&alt=43&start=${dadosApi?.dtFim}&end=${dadosApi?.dtInicio}`,
+    try {
+      const response = await fetch(
+        `https://meteostat.p.rapidapi.com/point/daily?lat=-23.5505&lon=-46.6333&alt=43&start=${dataInicio}&end=${dataFim}`,
         {
           headers: {
             "x-rapidapi-host": "meteostat.p.rapidapi.com",
@@ -73,28 +60,29 @@ function converterData(data : string) : string {
         }
       );
 
+      if (!response.ok) {
+        throw new Error("Erro ao buscar dados da API");
+      }
+
       const dataApi = await response.json();
       console.log(dataApi);
-        } catch (error) {
-            console.log(error);
-        }
-      
-      // Simulação de dados
-      const dadosSimulados: DadosPluviometricos[] = Array.from(
-        { length: 7 },
-        (_, i) => ({
-          data: new Date(
-            Date.now() - i * 24 * 60 * 60 * 1000
-          ).toLocaleDateString(),
-          volumeChuva: Math.random() * 100,
-          localizacao: "São Paulo - Centro",
-        })
-      );
-      setDados(dadosSimulados.reverse());
-    };
+      const dataApiReverse = dataApi.data.reverse();
 
-    buscarDados();
-  }, []);
+      const dadosGrafico: DadosPluviometricos[] = dataApiReverse.map((item, index) => ({
+        data: new Date(Date.now() - index * 24 * 60 * 60 * 1000).toLocaleDateString(),
+        volumeChuva: item.prcp ?? 0,
+        localizacao: "São Paulo - Centro",
+      }));
+
+      setDados(dadosGrafico.reverse());
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  buscarDados();
+}, []);
+
 
   const options = {
     responsive: true,
