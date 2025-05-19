@@ -30,6 +30,7 @@ const GraficoChuvas: React.FC = () => {
 
 useEffect(() => {
   const buscarDados = async () => {
+    //Converter data de dd/MM/yyyy para yyyy-MM-dd
     function converterData(data: string): string {
       const partes = data.split("/");
       const dia = parseInt(partes[0]);
@@ -50,7 +51,7 @@ useEffect(() => {
     const dataFim = converterData(hoje.toLocaleDateString());
 
     try {
-      const response = await fetch(
+      const response = await fetch( //Estou usando o Meteostat API mas caso queiram trocar OBS: Pode fazer 500 request por mês
         `https://meteostat.p.rapidapi.com/point/daily?lat=-23.5505&lon=-46.6333&alt=43&start=${dataInicio}&end=${dataFim}`,
         {
           headers: {
@@ -65,7 +66,6 @@ useEffect(() => {
       }
 
       const dataApi = await response.json();
-      console.log(dataApi);
       const dataApiReverse = dataApi.data.reverse();
 
       const dadosGrafico: DadosPluviometricos[] = dataApiReverse.map((item, index) => ({

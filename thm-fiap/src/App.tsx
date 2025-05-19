@@ -1,6 +1,7 @@
 import React from 'react';
 import MapaAlagamento from './components/MapaAlagamento';
 import GraficoChuvas from './components/GraficoChuvas';
+import PainelNoticias from './components/PainelNoticias';
 import './App.css';
 
 const App: React.FC = () => {
@@ -55,6 +56,17 @@ const App: React.FC = () => {
                                         Mantenha contatos de emergência sempre à mão
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="row mb-4">
+                    <div className="col-12">
+                        <div className="card">
+                            <div className="card-body">
+                                <h5 className="card-title">Notícias</h5>
+                                <PainelNoticias />
                             </div>
                         </div>
                     </div>
