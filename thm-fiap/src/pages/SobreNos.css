@@ -1,0 +1,106 @@
+.sobre-nos-container {
+    background-color: #f8f9fa;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+    padding: 4rem 0;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.hero-section .display-4 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.mission-statement {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-statement .lead {
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #007bff;
+}
+
+.team-card {
+    transition: transform 0.3s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img-top {
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.tech-card {
+    background: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card i {
+    color: #007bff;
+}
+
+.about-content .card {
+    border-radius: 15px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 0;
+    }
+
+    .mission-statement .lead {
+        font-size: 1.1rem;
+    }
+
+    .team-card {
+        margin-bottom: 2rem;
+    }
+}

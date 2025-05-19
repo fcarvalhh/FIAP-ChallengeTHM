@@ -3,6 +3,7 @@
     padding: 1rem 0;
     margin-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: center;
 }
 
 .navbar .nav-link {

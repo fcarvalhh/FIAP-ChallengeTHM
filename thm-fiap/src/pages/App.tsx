@@ -6,6 +6,7 @@ import PainelNoticias from '../components/features/PainelNoticias';
 import SobreNos from './SobreNos';
 import "../components/style/App.css";
 import Navbar from '../components/navbar/Navbar';
+import BotaoYoutube from '../components/features/BotaoYoutube';
 
 // Componente da página inicial
 const Home = () => {
@@ -81,6 +82,9 @@ const Home = () => {
     );
 };
 
+
+
+
 // Componente para a página de vídeo
 const Video = () => {
     return (
@@ -104,15 +108,21 @@ const Video = () => {
     );
 };
 
+
+
+
+
 const App: React.FC = () => {
     return (
+
+
         <Router>
             <div className="container-fluid p-0">
                 <header className="main-header">
                     <div className="container">
                         <h1>
                             <i className="bi bi-droplet-fill text-gradient me-2"></i>
-                            Sistema de Monitoramento de Enchentes
+                            Sistema de Monitoramento de Enchentes de São Paulo
                         </h1>
                         <p>Acompanhe em tempo real as áreas de risco na sua região</p>
                         <Navbar />
@@ -126,7 +136,7 @@ const App: React.FC = () => {
                         <Route path="/sobre" element={<SobreNos />} />
                     </Routes>
                 </main>
-
+                <BotaoYoutube />
                 <footer>
                     <div className="container text-center">
                         <p>© 2024 FJF System - Monitoramento Inteligente de Enchentes</p>
