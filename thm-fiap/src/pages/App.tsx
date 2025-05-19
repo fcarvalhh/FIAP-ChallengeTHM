@@ -5,7 +5,7 @@ import PainelNoticias from '../components/features/PainelNoticias';
 import SobreNos from './SobreNos';
 import "../components/style/App.css";
 import Header from '../components/header/header';
-
+import BotaoYoutube from '../components/features/BotaoYoutube';
 
 const App: React.FC = () => {
     const [pagina, setPagina] = useState<'principal' | 'sobre'>('principal');
@@ -85,7 +85,7 @@ const App: React.FC = () => {
                 )}
             </main>
 
-
+                <BotaoYoutube />
 
             <footer className="bg-light py-4 mt-4">
                 <div className="container text-center">
