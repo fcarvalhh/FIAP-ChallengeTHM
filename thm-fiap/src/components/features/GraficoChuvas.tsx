@@ -87,15 +87,45 @@ const GraficoChuvas: React.FC = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: true,
     plugins: {
       legend: {
         position: "top" as const,
+        labels: {
+          font: {
+            size: 12
+          }
+        }
       },
       title: {
         display: true,
         text: "Volume de Chuvas nos Últimos 7 Dias",
+        font: {
+          size: 16
+        }
       },
     },
+     animation: {
+        duration: 300
+      },
+    tooltip: {
+        
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: 'Volume (mm)'
+        }
+      },
+      x: {
+        title: {
+          display: true,
+          text: 'Data'
+        }
+      }
+    }
   };
 
   const data = {
@@ -106,6 +136,8 @@ const GraficoChuvas: React.FC = () => {
         data: dados.map((d) => d.volumeChuva),
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
+        tension: 0.1,
+        fill: true,
       },
     ],
   };
@@ -114,6 +146,12 @@ const GraficoChuvas: React.FC = () => {
     <div className="card">
       <div className="card-body">
         <Line options={options} data={data} />
+        <div className="mt-3 text-center">
+            <small className="text-muted">
+              <i className="bi bi-info-circle me-1"></i>
+              Dados meteorológicos de precipitação pluviométrica da região central de São Paulo
+            </small>
+          </div>
       </div>
     </div>
   );
