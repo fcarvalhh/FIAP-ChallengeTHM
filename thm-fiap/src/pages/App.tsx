@@ -113,12 +113,14 @@ const Video = () => {
                         <i className="bi bi-play-circle text-gradient"></i>
                         Conteúdo em Vídeo
                     </h2>
-                    <p className="lead">Em breve, conteúdo exclusivo sobre prevenção de enchentes e medidas de segurança.</p>
-                    <div className="mt-4 p-4 bg-light rounded-3">
-                        <div className="d-flex align-items-center">
-                            <i className="bi bi-construction text-warning me-3" style={{ fontSize: '2rem' }}></i>
-                            <p className="mb-0">Estamos preparando conteúdo de qualidade para você. Volte em breve!</p>
-                        </div>
+                    <p className="lead">Confira nossa apresentação sobre o Sistema de Monitoramento de Enchentes de São Paulo.</p>
+                    <div className="mt-4 ratio ratio-16x9">
+                        <iframe
+                            src="https://www.youtube.com/embed/TK1_i7kZAqQ"
+                            title="Apresentação do Sistema de Monitoramento de Enchentes"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen>
+                        </iframe>
                     </div>
                 </div>
             </div>
