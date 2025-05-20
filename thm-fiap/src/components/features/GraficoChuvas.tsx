@@ -122,7 +122,7 @@ const GraficoChuvas: React.FC = () => {
       },
       tooltip: {
         callbacks: {
-          label: function (context) {
+          label: function (context: any) {
             return `${context.dataset.label}: ${context.parsed.y} mm`;
           }
         }

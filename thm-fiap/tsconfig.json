@@ -3,7 +3,17 @@
         "outDir": "./dist",
         "removeComments": true,
         "strict": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "jsx": "react-jsx",
+        "target": "ES2017",
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext"
+        ]
     },
     "include": [
         "src"
