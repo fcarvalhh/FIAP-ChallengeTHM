@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { PontoAlagamento } from '../../types';
 import { Icon } from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
 /** 
  * Componente que exibe o mapa com os pontos de alagamento
@@ -15,6 +16,14 @@ const MapaAlagamento: React.FC = () => {
     /* Definindo a posição inicial do mapa
        Coordenadas do centro de São Paulo */
     const posicaoInicial = { lat: -23.5505, lng: -46.6333 };
+
+    // Definindo o ícone personalizado para os marcadores
+    const iconeAlagamento = new Icon({
+        iconUrl: '/img/cuidado.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    });
 
     useEffect(() => {
         // TODO: Implementar chamada à API para buscar pontos de alagamento
@@ -66,6 +75,7 @@ const MapaAlagamento: React.FC = () => {
                     <Marker
                         key={ponto.id}
                         position={[ponto.latitude, ponto.longitude]}
+                        icon={iconeAlagamento}
                     >
                         <Popup>
                             <div>
