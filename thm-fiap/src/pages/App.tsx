@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MapaAlagamento from '../components/features/MapaAlagamento';
 import GraficoChuvas from '../components/features/GraficoChuvas';
 import PainelNoticias from '../components/features/PainelNoticias';
+import AlertasEmergenciaSimples from '../components/features/AlertasEmergenciaSimples';
 import SobreNos from './SobreNos';
+import Alertas from './Alertas';
 import "../components/style/App.css";
 import Navbar from '../components/navbar/Navbar';
 import BotaoYoutube from '../components/features/BotaoYoutube';
@@ -34,7 +36,9 @@ const Home = () => {
                                 <i className="bi bi-graph-up text-gradient"></i>
                                 Histórico de Chuvas
                             </h5>
-                            <GraficoChuvas />
+                            <div className="grafico-container">
+                                <GraficoChuvas />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -74,6 +78,20 @@ const Home = () => {
                                 Notícias
                             </h5>
                             <PainelNoticias />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="row mb-4">
+                <div className="col-12">
+                    <div className="card shadow-lg">
+                        <div className="card-body">
+                            <h5 className="card-title">
+                                <i className="bi bi-exclamation-triangle-fill text-gradient"></i>
+                                Alertas do CGE
+                            </h5>
+                            <AlertasEmergenciaSimples />
                         </div>
                     </div>
                 </div>
@@ -132,6 +150,7 @@ const App: React.FC = () => {
                 <main className="container py-4">
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/alertas" element={<Alertas />} />
                         <Route path="/video" element={<Video />} />
                         <Route path="/sobre" element={<SobreNos />} />
                     </Routes>

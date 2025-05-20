@@ -31,6 +31,12 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className="nav-item">
+                            <Link className="nav-link" to="/alertas">
+                                <i className="bi bi-exclamation-triangle me-1"></i>
+                                Alertas CGE
+                            </Link>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link" to="/video">
                                 <i className="bi bi-play-circle me-1"></i>
                                 YouTube Video

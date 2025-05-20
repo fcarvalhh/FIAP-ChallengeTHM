@@ -65,6 +65,14 @@
     transform: scale(1.05);
 }
 
+.team-card .card-title {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+
 .tech-card {
     background: white;
     border-radius: 10px;

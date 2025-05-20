@@ -292,3 +292,169 @@ footer p {
 .shadow-lg {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1) !important;
 }
+
+/* Estilos para o componente AlertasCGE */
+.alertas-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.alertas-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  color: var(--primary-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.alertas-header i {
+  color: var(--warning-color);
+  font-size: 1.25rem;
+}
+
+.alertas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.alerta-item {
+  display: flex;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.alerta-item:hover {
+  transform: translateX(5px);
+}
+
+.alerta-nivel {
+  width: 6px;
+  flex-shrink: 0;
+}
+
+.bg-orange {
+  background-color: #fd7e14;
+}
+
+.alerta-content {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.alerta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.alerta-header h6 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.alerta-data {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.alerta-descricao {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.alerta-atualizacao {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.alertas-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  color: var(--text-light);
+}
+
+/* Responsividade para os alertas */
+@media (max-width: 768px) {
+  .alertas-list {
+    max-height: 300px;
+  }
+}
+
+/* Estilos para o componente AlertasEmergenciaSimples */
+.alertas-simples-container {
+  padding: 0.5rem 0;
+}
+
+.alertas-simples-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.alerta-simples-item {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-left: 3px solid var(--accent-color);
+  padding: 0.75rem;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.alerta-simples-item:hover {
+  transform: translateX(3px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.alerta-regiao {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+
+.alerta-descricao {
+  font-size: 0.85rem;
+  color: var(--text-color);
+}
+
+.bg-orange {
+  background-color: #fd7e14 !important;
+  color: white !important;
+}
+
+/* Responsividade para os alertas simples */
+@media (max-width: 768px) {
+  .alertas-simples-list {
+    gap: 0.4rem;
+  }
+
+  .alerta-simples-item {
+    padding: 0.6rem;
+  }
+}
+
+/* Estilo para o container do gráfico */
+.grafico-container {
+  width: 100%;
+  min-height: 350px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .grafico-container {
+    min-height: 280px;
+  }
+}
