@@ -9,6 +9,7 @@ import Alertas from './Alertas';
 import "../components/style/App.css";
 import Navbar from '../components/navbar/Navbar';
 import BotaoYoutube from '../components/features/BotaoYoutube';
+import "../js/bootstrap.js";
 
 // Componente da página inicial
 const Home = () => {
