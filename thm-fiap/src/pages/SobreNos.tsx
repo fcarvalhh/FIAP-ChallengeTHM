@@ -1,7 +1,4 @@
 import React from 'react';
-import fredImg from '../img/fred.jpeg';
-import joaoImg from '../img/joao.jpg';
-import felipeImg from '../img/felipe.jpeg';
 import './SobreNos.css';
 
 const integrantes = [
@@ -9,7 +6,7 @@ const integrantes = [
     nome: 'Fred Carvalho',
     funcao: 'Desenvolvedor Front-End',
     descricao: 'Responsável pela construção da interface do usuário e integração com os dados do mapa.',
-    imagem: fredImg,
+    imagem: '/img/fred.jpeg',
     imagePosition: 'center 70%',
     linkedin: 'https://www.linkedin.com/in/fred-carvalho1721/'
   },
@@ -17,7 +14,7 @@ const integrantes = [
     nome: 'João Pedro',
     funcao: 'Desenvolvedor Back-End',
     descricao: 'Atuou na estruturação dos dados, lógica de alagamento e gráficos históricos.',
-    imagem: joaoImg,
+    imagem: '/img/joao.jpg',
     imagePosition: 'center center',
     linkedin: 'https://www.linkedin.com/in/jo%C3%A3o-pedro-albino-58206b316'
   },
@@ -25,7 +22,7 @@ const integrantes = [
     nome: 'Felipe',
     funcao: 'Designer e Testes',
     descricao: 'Cuidou do layout, experiência do usuário e testes finais de usabilidade.',
-    imagem: felipeImg,
+    imagem: '/img/felipe.jpeg',
     imagePosition: 'center center',
     linkedin: 'https://www.linkedin.com/in/felipevazcoelho/'
   }
